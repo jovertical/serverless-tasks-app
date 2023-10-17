@@ -10,36 +10,36 @@ plugins:
 
 functions:
   getAllTasks:
-    handler: handler.getAllTasks
+    handler: tasks/getAll.handler
     events:
       - httpApi:
           path: /tasks
           method: get
 
   createTask:
-    handler: handler.createTask
+    handler: tasks/create.handler
     events:
       - httpApi:
           path: /tasks
           method: post
 
   updateTask:
-    handler: handler.updateTask
+    handler: tasks/update.handler
     events:
       - httpApi:
           path: /tasks/{id}
           method: patch
 
-  completeTask:
-    handler: handler.completeTask
-    events:
-      - httpApi:
-          path: /tasks/{id}/complete
-          method: post
-
   deleteTask:
-    handler: handler.deleteTask
+    handler: tasks/delete.handler
     events:
       - httpApi:
           path: /tasks/{id}
           method: delete
+
+  completeTask:
+    handler: tasks/complete.handler
+    events:
+      - httpApi:
+          path: /tasks/{id}/complete
+          method: post
