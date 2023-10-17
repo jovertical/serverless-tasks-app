@@ -22,3 +22,24 @@ functions:
       - httpApi:
           path: /tasks
           method: post
+
+  updateTask:
+    handler: handler.updateTask
+    events:
+      - httpApi:
+          path: /tasks/{id}
+          method: patch
+
+  completeTask:
+    handler: handler.completeTask
+    events:
+      - httpApi:
+          path: /tasks/{id}/complete
+          method: post
+
+  deleteTask:
+    handler: handler.deleteTask
+    events:
+      - httpApi:
+          path: /tasks/{id}
+          method: delete
