@@ -9,8 +9,8 @@ plugins:
   - serverless-offline
 
 functions:
-  api:
-    handler: index.handler
+  all:
+    handler: index.all
     events:
       - httpApi:
           path: /

@@ -1,15 +1,10 @@
-module.exports.handler = async (event) => {
-  console.log(event);
+const { json } = require('./utils');
+const mongodb = require('./utils/mongodb');
 
-  return {
-    statusCode: 200,
-    body: JSON.stringify(
-      {
-        message: 'Go Serverless v3.0! Your function executed successfully!',
-        input: event,
-      },
-      null,
-      2
-    ),
-  };
+module.exports.all = async (event) => {
+  const db = await mongodb();
+
+  const tasks = await db.collection('tasks').find().toArray();
+
+  return json(tasks);
 };

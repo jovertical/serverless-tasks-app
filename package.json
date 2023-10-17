@@ -1,4 +1,8 @@
 {
+  "private": true,
+  "dependencies": {
+    "mongodb": "^6.1.0"
+  },
   "devDependencies": {
     "serverless-offline": "^13.2.0"
   }
