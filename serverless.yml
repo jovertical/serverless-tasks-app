@@ -9,9 +9,16 @@ plugins:
   - serverless-offline
 
 functions:
-  all:
-    handler: index.all
+  getAllTasks:
+    handler: handler.getAllTasks
     events:
       - httpApi:
-          path: /
+          path: /tasks
           method: get
+
+  createTask:
+    handler: handler.createTask
+    events:
+      - httpApi:
+          path: /tasks
+          method: post
